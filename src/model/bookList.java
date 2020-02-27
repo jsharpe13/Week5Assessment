@@ -75,4 +75,8 @@ public class bookList
 	{
 		return title + ": " + author + ": " + year;
 	}
+	@Override
+	public String toString() {
+		return "bookList [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + "]";
+	}
 }
