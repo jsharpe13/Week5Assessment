@@ -3,9 +3,36 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<script type = "text/javascript">
+
+	function validate()
+	{
+		if(document.myForm.title.value == "")
+		{
+			alert("Please provide a title");
+			document.myForm.title.focus();
+			return false;
+		}
+		if(document.myForm.author.value == "")
+		{
+			alert("Please provide the author's last name");
+			document.myForm.title.focus();
+			return false;
+		}
+		if(document.myForm.year.value == "" || document.myForm.year.value / 1 != document.myForm.year.value || document.myForm.year.value.length > 4)
+		{
+			alert("Please provide a year in the format of yyyy");
+			document.myForm.title.focus();
+			return false;
+		}
+		
+	}
+</script>
+
 </head>
 <body>
-	<form action = "addBookServlet" method="post">
+	<form action = "addBookServlet" name="myForm" method="post" onsubmit="return(validate());">
 	Title: <input type="text" name="title">
 	Author: <input type="text" name = "author">
 	Year: <input type="text" name="year">

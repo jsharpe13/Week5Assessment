@@ -28,7 +28,7 @@ public class CheckOutList
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="CARD_ID")
 	private Person person;
-	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 		@JoinTable
 		(
 			name="books_on_list",
